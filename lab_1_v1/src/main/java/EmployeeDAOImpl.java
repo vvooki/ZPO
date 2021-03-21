@@ -29,7 +29,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
     public Optional<Employee> findByName(String name) {
         Optional<Employee> result = Optional.empty();
 
-        String sql = "SELECT * FROM EMPLOYEE WHERE name LIKE '"+name+"%'";
+        String sql = "SELECT * FROM EMPLOYEE WHERE name = '"+name+"'";
         try{
             ResultSet resultSet = dbconnector.getResultSet(sql);
             if(resultSet.next()) {
